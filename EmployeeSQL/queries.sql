@@ -10,7 +10,7 @@ order by last_name, first_name;
 
 select first_name as FirstName, last_name as LastName,  hire_date as HireDate
 from employees
-where hire_date like '1986%';
+where hire_date > '1985-12-31' and hire_date < '1987-01-01';
 
 
 --List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
