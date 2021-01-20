@@ -1,10 +1,6 @@
-﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
--- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
-
-
 CREATE TABLE "departments" (
-    "dept_no" String   NOT NULL,
-    "dept_name" String   NOT NULL,
+    "dept_no" varchar   NOT NULL,
+    "dept_name" varchar   NOT NULL,
     CONSTRAINT "pk_departments" PRIMARY KEY (
         "dept_no"
      )
@@ -12,11 +8,11 @@ CREATE TABLE "departments" (
 
 CREATE TABLE "employees" (
     "emp_no" Integer   NOT NULL,
-    "emp_title_id" String   NOT NULL,
+    "emp_title_id" varchar   NOT NULL,
     "birth_date" Date   NOT NULL,
-    "first_name" String   NOT NULL,
-    "last_name" String   NOT NULL,
-    "sex" String   NOT NULL,
+    "first_name" varchar   NOT NULL,
+    "last_name" varchar   NOT NULL,
+    "sex" varchar   NOT NULL,
     "hire_date" Date   NOT NULL,
     CONSTRAINT "pk_employees" PRIMARY KEY (
         "emp_no"
@@ -24,8 +20,8 @@ CREATE TABLE "employees" (
 );
 
 CREATE TABLE "titles" (
-    "title_id" String   NOT NULL,
-    "title" String   NOT NULL,
+    "title_id" varchar   NOT NULL,
+    "title" varchar   NOT NULL,
     CONSTRAINT "pk_titles" PRIMARY KEY (
         "title_id"
      )
@@ -33,17 +29,17 @@ CREATE TABLE "titles" (
 
 CREATE TABLE "dept_emp" (
     "emp_no" Integer   NOT NULL,
-    "dept_no" String   NOT NULL
+    "dept_no" varchar   NOT NULL
 );
 
 CREATE TABLE "dept_manager" (
-    "dept_no" String   NOT NULL,
+    "dept_no" varchar   NOT NULL,
     "emp_no" Integer   NOT NULL
 );
 
 CREATE TABLE "salaries" (
     "emp_no" Integer   NOT NULL,
-    "salary" float   NOT NULL
+    "salary" Float   NOT NULL
 );
 
 ALTER TABLE "employees" ADD CONSTRAINT "fk_employees_emp_title_id" FOREIGN KEY("emp_title_id")
